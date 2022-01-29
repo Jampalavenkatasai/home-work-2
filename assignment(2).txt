@@ -1,6 +1,6 @@
 package jan29;
 
-public class vamsi {
+public class venkatasai {
 	public static void main(String[]args) {
 		
 			int num1 = 100;
