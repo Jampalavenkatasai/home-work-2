@@ -1,0 +1,319 @@
+package com.Feb_14;
+
+public class diamond_Shape {
+	public static void main(String[] args) {
+		int n = 6;
+		for (int i = 0; i <= n; i++) {
+			for (int k = n - i; k > 0; k--) {
+				System.out.print(" ");
+			}
+			for (int j = 1; j <= i; j++) {
+				System.out.print("*");
+			}
+			for (int l = 0; l <= i; l++) {
+				System.out.print("*");
+			}
+			System.out.print("\n");
+		}
+		for (int i = n; i >= 0; i--) {
+			for (int k = 1; k <= n - i; k++) {
+				System.out.print(" ");
+			}
+			for (int j = i; j >= 0; j--) {
+				System.out.print("*");
+			}
+			for (int l = i; l > 0; l--) {
+				System.out.print("*");
+			}
+			System.out.print("\n");
+		}
+	}
+}
+ package com.Feb_14;
+
+public class div_By_3 {
+	public static void main(String[] args) {
+		int n = 1;
+		while (n <= 100) {
+			if (n % 3 == 0) {
+				System.out.print(n + " ");
+			}
+			n++;
+		}
+	}
+}
+package com.Feb_14;
+
+public class left_Tri_Decrease {
+	public static void main(String[] args) {
+		int n = 6;
+		for (int i = n; i >= 0; i--) {
+			for (int j = i; j >= 0; j--) {
+				System.out.print("*");
+			}
+			System.out.print("\n");
+		}
+	}
+}
+ package com.Feb_14;
+
+public class left_Tri_Increase {
+	public static void main(String[] args) {
+		for (int i = 1; i <= 6; i++) {
+			for (int j = 1; j <= i; j++) {
+				System.out.print("*");
+			}
+			System.out.print("\n");
+		}
+
+package com.Feb_15;
+
+import java.util.*;
+
+public class f_to_C {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter the temperature in �F: ");
+		float f = s.nextFloat();
+		float c = (f - 32) * 5 / 9;
+		System.out.print("Temperature converted to �C: " + c);
+		s.close();
+	}
+}
+ package com.Feb_15;
+
+import java.util.*;
+
+public class inches_To_Meters {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter the measurement in Inches: ");
+		float inches = s.nextFloat();
+		float meters = inches * 0.0254f;
+		System.out.print("Converted value to meters is: " + meters + "m");
+		s.close();
+	}
+}
+package com.Feb_15;
+
+import java.util.*;
+
+public class min_To_DaysYears {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter Minutes: ");
+		float min = s.nextInt();
+		int years = 0;
+		while (min * 1.9026e-6f > 1) {
+			years++;
+			min = min - 1 / 1.9026e-6f;
+		}
+		float days = min * 0.000694444f;
+		System.out.print(years + " Year/s and " + days + " Day/s");
+		s.close();
+	}
+}
+// 1 min = 0.000694444 days
+// 1 min = 1.9026e-6 years
+
+package com.Feb_16;
+
+import java.util.*;
+
+public class factorial_doWhile {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int num = s.nextInt();
+		int factorial = 1;
+		do {
+			factorial *= num;
+			num--;
+		} while (num > 0);
+		System.out.println(factorial);
+
+		System.out.println("Do you wanna Continue (Y/N)");
+		char c = s.next().charAt(0);
+		if (c == 'Y' || c == 'y') {
+			main(null);
+		}
+	}
+}
+ package com.Feb_16;
+
+import java.util.*;
+
+public class number_Of_digits {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter the number : ");
+		int num = s.nextInt();
+		int count = 0;
+		while (num > 0) {
+			count++;
+			num /= 10;
+		}
+		System.out.print("Number of digits in the given num is: " + count);
+		s.close();
+	}
+}
+
+package com.Feb_16;
+
+import java.util.*;
+
+public class odd_Even_Function {
+	public static void odd_Even(int num) {
+		if (num % 2 == 0) {
+			System.out.print("number is even");
+		} else {
+			System.out.print("number is odd");
+		}
+	}
+
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int num = s.nextInt();
+		odd_Even(num);
+	}
+}
+ package com.Feb_17;
+
+import java.util.*;
+
+public class checkNum_Equals {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter the number : ");
+		int n = s.nextInt();
+		String result = (n <= 50 && n>0 && n % 10 == 0) ? "Belongs to the group" : "Doesn't belong to the group";
+		System.out.print(result); // [10, 20, 30, 40, 50]
+		s.close();
+	}
+}
+ package com.Feb_17;
+
+import java.util.*;
+
+public class greaterThan_Ternary {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter the num : ");
+		int n = s.nextInt();
+		String comment = n > 10 ? "Greater than 10" : n > 5 ? "Greater than 5" : "Less than 5";
+		System.out.print(comment);
+	}
+
+package com.Feb_17;
+
+import java.util.*;
+
+public class month_Num_Name {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter the month number within range: ");
+		int n = s.nextInt();
+		String month = "";
+		switch(n) {
+		case 1:
+			month = "Jan";
+			break;
+		case 2:
+			month = "Feb";
+			break;
+		case 3: 
+			month = "Mar";
+			break;
+		case 4:
+			month = "April";
+			break;
+		case 5:
+			month = "May";
+			break;
+		case 6:
+			month = "June";
+			break;
+		case 7:
+			month = "July";
+			break;
+		case 8:
+			month = "Aug";
+			break;
+		case 9:
+			month = "Sept";
+			break;
+		case 10:
+			month = "Oct";
+			break;
+		case 11:
+			month = "Nov";
+			break;
+		case 12:
+			month = "Dec";
+			break;
+		default:
+			month = "input number is not valid";
+			break;
+		} 
+		System.out.println(month);
+		s.close();
+	}
+}
+
+package Fed_18_19;
+
+import java.util.*;
+
+public class f_to_C {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter the temperature in �F: ");
+		float f = s.nextFloat();
+		float c = (f - 32) * 5 / 9;
+		System.out.print("Temperature converted to �C: " + c);
+		s.close();
+	}
+}
+
+package Fed_18_19;
+
+import java.util.*;
+
+public class num_Char_Input {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter first num: ");
+		float a = s.nextFloat();
+		System.out.print("Enter second num: ");
+		float b = s.nextFloat();
+		System.out.print("Enter the operation char: ");
+		char c = s.next().charAt(0);
+		float result = 0;
+
+		if (c == '+') {
+			result = a + b;
+		} else if (c == '-') {
+			result = a - b;
+		} else if (c == '/') {
+			result = a / b;
+		} else if (c == '*') {
+			result = a * b;
+		} else {
+			System.out.print("invaid operation");
+		}
+
+		System.out.println(a + " " + c + " " + b + " = " + result);
+		main(null);
+	}
+}
+
+package Fed_18_19;
+
+public class pre_Post_Increment {
+	public static void main(String[] args) {
+		int a = 10;
+		if(++a == 11 || ++a == 12) {
+			++a;
+		}
+		System.out.print(a);
+	}
+}
