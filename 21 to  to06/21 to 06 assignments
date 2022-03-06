@@ -1,0 +1,318 @@
+//Find if a given number is power of 2, Explore on logarithm function
+
+import java.util.*;
+
+public class check_IfPowOf2 {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter a number: ");
+		int n = s.nextInt();
+		double log = Math.log(n) / Math.log(2);
+
+		System.out.println("Is power of 2: " + (Math.floor(log) == Math.ceil(log)));
+		main(null);
+	}
+}
+
+//Find the first 3 terms of 4N + 9 where it is divisible by 3
+
+public class first3TermsOfEqn {
+	public static void main(String[] args) {
+		int count = 0;
+		for (int i = 0; count < 3; i++) {
+			int eqn = 4 * i + 9;
+			if (eqn % 3 == 0) {
+				System.ou…
+
+
+//Find if a given number is power of 2, Explore on logarithm function
+
+import java.util.*;
+
+public class check_IfPowOf2 {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter a number: ");
+		int n = s.nextInt();
+		double log = Math.log(n) / Math.log(2);
+
+		System.out.println("Is power of 2: " + (Math.floor(log) == Math.ceil(log)));
+		main(null);
+	}
+}
+
+//Find the first 3 terms of 4N + 9 where it is divisible by 3
+
+public class first3TermsOfEqn {
+	public static void main(String[] args) {
+		int count = 0;
+		for (int i = 0; count < 3; i++) {
+			int eqn = 4 * i + 9;
+			if (eqn % 3 == 0) {
+				System.out.println(eqn);
+				count++;
+			}
+		}
+	}
+}
+
+//Find the first 7 terms of (N *6N) where it is divisible by 6
+
+public class first7TermsOfEqn {
+	public static void main(String[] args) {
+		int count = 0;
+		for (int n = 0; count < 7; n++) {
+			int eqn = n * 6 * n;
+			if (eqn % 6 == 0) {
+				System.out.println(eqn);
+				count++;
+			}
+		}
+	}
+}
+
+//Check if the number is divisible by 2 and 8 but not 12
+
+import java.util.*;
+
+public class numDivBy2_8_Not12 {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter a number: ");
+		int n = s.nextInt();
+		if (n % 2 == 0 && n % 8 == 0 && n % 12 != 0) {
+			System.out.print("divisible by 2 and 8 but not 12");
+		} else {
+			System.out.print("statement not satisfied");
+		}
+	}
+}
+
+
+//Create a function that check if num is odd or even. call this fucntion from main method
+
+import java.util.*;
+
+public class evenOrOddFucntion {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
+		evenOdd(n);
+		s.close();
+	}
+
+	public static void evenOdd(int n) {
+		String result = "";
+		if (n % 2 == 0) {
+			result = "EVEN";
+		} else {
+			result = "ODD";
+		}
+		System.out.println(result);
+	}
+}
+ import java.util.*;
+
+public class factorialOfNum {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter a num: ");
+		int n = s.nextInt();
+		double factorial = 1;
+		if (n != 0) {
+			do {
+				factorial *= n;
+				n--;
+			} while (n > 0);
+		}
+		System.out.println("Factorial: " + factorial + "\nDo you want to continue? (Y/N): ");
+		char c = s.next().charAt(0);
+		if (c == 'Y' || c == 'y') {
+			main(null);
+		}
+	}
+}
+
+
+import java.util.*;
+
+public class factorialWhileLoop {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
+		double factorial = 1;
+		while (n > 0) {
+			factorial *= n;
+			n--;
+		}
+		System.out.println("Factorial = " + factorial);
+	}
+}
+
+import java.util.*;
+
+public class nestedIfNumEven {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter a number b/w 0 and 10: ");
+		int n = s.nextInt();
+		String result = "";
+		if (n >= 0) {
+			if (n <= 10) {
+				if (n % 2 == 0) {
+					result = "EVEN";
+				} else {
+					result = "ODD";
+				}
+			} else {
+				result = "INVALID INPUT";
+			}
+		} else {
+			result = "INVALID INPUT";
+		}
+		System.out.println(result);
+		main(null);
+		s.close();
+	}
+}
+
+
+
+
+import java.util.*;
+
+public class yearSubjectEng {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter the branch: ");
+		String branch = s.next();
+		System.out.print("Enter the year: ");
+		int year = s.nextInt();
+		String subject = "";
+		switch (year) {
+		case 1:
+			subject = "All the subjects are same";
+			break;
+		case 2:
+		case 3:
+		case 4:
+			switch (branch) {
+			case "MECH":
+				subject = "Mechanical subjects";
+				break;
+			case "CSE":
+			case "IT":
+				subject = "Computer and progremming related subjects";
+				break;
+			case "ECE":
+			case "ELE":
+				subject = "Electrical related subjects";
+				break;
+			default:
+				subject = "Invalid Branch";
+				break;
+			}
+			break;
+		default:
+			subject = "Invalid Year";
+			break;
+		}
+		System.out.println(subject);
+		s.close();
+	}
+}
+
+public class diamondPattern {
+	public static void main(String[] args) {
+		short n = 5;
+		short e = (short) (n - 5);
+		for (short x = 1; x <= n * 2; x += 2) {
+			for (short s = (short) (n + 3); s > x - e; s -= 2) {
+				System.out.print(" ");
+			}
+			for (short y = 1; y <= x; y++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+		for (short x = 3; x < n * 2; x += 2) {
+			for (short s = 1; s < x; s += 2) {
+				System.out.print(" ");
+			}
+			for (short y = (short) (n * 2); y > x; y--) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+}
+
+public class leftTriangle {
+	public static void main(String[] args) {
+		int n = 5;
+		for (short x = 1; x <= 5; x++) {
+			for (short y = 1; y <= x; y++) {
+				System.out.print("*");
+			}
+			System.out.println();
+		}
+	}
+}
+
+public class pyramid_Pattern {
+	public static void main(String[] args) {
+		int n = 5;
+		for (short x = 1; x <= n; x++) {
+			for (short s = x; s < n; s++) {
+				System.out.print(" ");
+			}
+			for (short y = 1; y <= x; y++) {
+				System.out.print("* ");
+			}
+			System.out.println();
+		}
+	}
+}
+
+public class inverted_V {
+	public static void main(String[] args) {
+		short n = 5;
+		for (short x = 1; x <= n; x++) {
+			for (short s = n; s > x; s--) {
+				System.out.print(" ");
+			}
+			for (short y = 1; y <= x; y++) {
+				if (y == 1 || y == x) {
+					System.out.print("* ");
+				} else {
+					System.out.print("  ");
+				}
+			}
+			System.out.println();
+		}
+	}
+}
+
+
+public class pyramidSpace_PantPattern {
+	public static void main(String[] args) {
+		short n = 5;
+		short a = 0;
+		for(short x = 0; x < n; x++) {
+			if(x > 1) {
+				a++;
+			}
+			for(short y = 0; y < n * 2; y++) {
+				if(y == n-x) {
+					for(short s = 1; s <= x + a; s++) {
+						System.out.print(" ");
+						y++;
+					}
+				} else {
+					System.out.print("*");
+				}
+			}
+			System.out.println();
+		}
+	}
+}
