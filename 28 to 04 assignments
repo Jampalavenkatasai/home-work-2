@@ -1,0 +1,392 @@
+
+
+// write a method to print fibonacci series
+import java.util,*;
+public class fibonacci_Method {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter nth value: ");
+		int n = s.nextInt();
+		fibonacci(n);
+		s.close();
+	}
+
+	static void fibonacci(int n) {
+		int a = 0;
+		int b = 1;
+		int c = 0;
+		if (n == 0) {
+			System.out.println(a);
+		} else if (n == 1) {
+			System.out.println(b);
+		} else {
+			System.out.print(a + " " + b);
+			for (int i = 2; i <= n; i++) {
+				c = a + b;
+				a = b;
+				b = c;
+				System.out.print(" " + c);
+			}
+		}
+	}
+}
+
+import java.util.*;
+
+// write a method to Reverse a Number in Java
+
+public class reverse_Method {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int num = s.nextInt();
+		reverseNum(num);
+	}
+
+	static void reverseNum(int n) {
+		// find the unit place
+		int n1 = n;
+		int unitsplace = 1;
+		while (n1 > 0) {
+			unitsplace *= 10;
+			n1 /= 10;
+		}
+		unitsplace /= 10;
+
+		// reverse the number
+		int reverse = 0;
+		while (n > 0) {
+			reverse += (n % 10) * unitsplace;
+			unitsplace /= 10;
+			n /= 10;
+		}
+		System.out.println(reverse);
+	}
+}
+
+
+// wrte a method to Swap Two Numbers without usng third variable
+
+import java.util.*;
+
+public class swapWithoutTemp {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		System.out.print("Enter two numbers: \na = ");
+		int a = s.nextInt();
+		System.out.print("b = ");
+		int b = s.nextInt();
+		swapNumbers(a, b);
+		s.close();
+	}
+
+	static void swapNumbers(int a, int b) {
+		a = a ^ b;
+		b = a ^ b;
+		a = a ^ b;
+		System.out.print("After swap: " + "\na = " + a + "\nb = " + b);
+	}
+}
+
+
+import java.util.*;
+
+// make an array with user inputs of size 10. then print count of all even numbers in an array
+
+public class countEvenNums {
+	static Scanner s = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		System.out.println("input elements to array of length 10");
+		int array[] = makeAnArray();
+		int countEven = countEvenEle(array);
+		System.out.println("Count of Evens: " + countEven);
+	}
+
+	static int[] makeAnArray() {
+		int arr[] = new int[10];
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print("[" + i + "] = ");
+			arr[i] = s.nextInt();
+		}
+		return arr;
+	}
+
+	static int countEvenEle(int arr[]) {
+		int count = 0;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] % 2 == 0) {
+				count++;
+			}
+		}
+		return count;
+	}
+}
+
+
+import java.util.*;
+
+// make an array with user inputs of size 10. then print all even numbers in an array
+
+public class evenNumsArray {
+	static Scanner s = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		System.out.println("input elements to array of length 10");
+		int array[] = makeAnArray();
+		evenNumbers(array);
+	}
+
+	static int[] makeAnArray() {
+		int arr[] = new int[10];
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print("[" + i + "] = ");
+			arr[i] = s.nextInt();
+		}
+		return arr;
+	}
+
+	static void evenNumbers(int arr[]) {
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] % 2 == 0) {
+				System.out.print(arr[i] + " ");
+			}
+		}
+	}
+}
+
+
+import java.util.*;
+
+// make an array with user inputs of size 10. then print all even numbers in an array
+
+public class evenNumsArray {
+	static Scanner s = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		System.out.println("input elements to array of length 10");
+		int array[] = makeAnArray();
+		evenNumbers(array);
+	}
+
+	static int[] makeAnArray() {
+		int arr[] = new int[10];
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print("[" + i + "] = ");
+			arr[i] = s.nextInt();
+		}
+		return arr;
+	}
+
+	static void evenNumbers(int arr[]) {
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] % 2 == 0) {
+				System.out.print(arr[i] + " ");
+			}
+		}
+	}
+}
+
+
+import java.util.*;
+
+// make an array with user inputs of size 10. , then find midle element in an array
+
+public class middleElementArray {
+	static Scanner s = new Scanner(System.in);
+
+	public static void main(String[] args) {
+		System.out.println("input elements to array of length 10");
+		int array[] = makeAnArray();
+		String middleElement = findMiddleElement(array);
+		System.out.println("Middle Element/s: " + middleElement);
+	}
+
+	static int[] makeAnArray() {
+		int arr[] = new int[10];
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print("[" + i + "] = ");
+			arr[i] = s.nextInt();
+		}
+		return arr;
+	}
+
+	static String findMiddleElement(int arr[]) {
+		String middleArrayString = "";
+		int j = arr.length - 1;
+		for (int i = 0; i < arr.length; i++) {
+			if (Math.abs(i - j) == 1) {
+				middleArrayString = arr[j] + " " + arr[i];
+			} else if (i == j) {
+				middleArrayString += arr[i];
+			}
+			j--;
+		}
+		return middleArrayString;
+	}
+
+
+// WAP to convert binary number to decimal
+
+import java.util.*;
+
+public class BinaryToDecimal {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int binary = s.nextInt();
+		int decimal = binToDeci(binary);
+		System.out.println("binary to decimal = " + decimal);
+	}
+	
+	static int binToDeci(int binary) {
+		int deci = 0;
+		int pow = 0;
+		while(binary > 0) {
+			deci += (binary%10) * Math.pow(2, pow);
+			pow++;
+			binary /= 10;
+		}
+		return deci;
+	}
+}
+
+
+import java.util.*;
+
+public class differenceOfArrays {
+	public static void main(String[] args) {
+		int arr1[] = { 1, 5, 6, 8, 19, 46, 54, 8, 7, 5 };
+		int arr2[] = { 5, 6, 8, 5, 21, 35, 45, 6, 98, 4 };
+		int diffArray[] = (arr1.length >= arr2.length) ? differenceOfArr(arr1, arr2) : differenceOfArr(arr2, arr1);
+		printArray(diffArray);
+	}
+
+	static int[] differenceOfArr(int large[], int small[]) {
+		int diffArray[] = large;
+		for (int i = 0; i < small.length; i++) {
+			diffArray[i] -= small[i];
+		}
+		return diffArray;
+	}
+
+	static void printArray(int arr[]) {
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
+	}
+}
+
+import java.util.*;
+// WAP to find first index at which element is present in array
+
+public class firstIndexOfElement {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
+		int arr[] = { 1, 2, 3, 5, 6, 5, 8, 2, 9, 6, 10 };
+		findIndex(arr, n);
+	}
+
+	static void findIndex(int arr[], int n) {
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == n) {
+				System.out.println("First index of element = " + i);
+				break;
+			}
+		}
+	}
+}
+
+
+// WAP to find last index at which element is present in array
+
+import java.util.*;
+
+public class lastIndexOfElement {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		int n = s.nextInt();
+		int arr[] = { 1, 2, 3, 5, 6, 5, 8, 2, 9, 6, 10 };
+		lastIndex(arr, n);
+	}
+
+	static void lastIndex(int arr[], int n) {
+		int index = 0;
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] == n) {
+				index = i;
+			}
+		}
+		System.out.println("Last Index Of Element = " + index);
+	}
+}
+[3/6, 5:14 PM] Vamshi Lits@dip: package week1.March_4;
+
+// Java Program to Remove a Given Word From a String
+
+import java.util.*;
+
+public class removeSubstring {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		String str = "Hii There, Geekster";
+		System.out.print(str + "\nEnter the word to remove: ");
+		String word = s.next();
+		removeWord(str, word);
+	}
+
+	static void removeWord(String str, String word) {
+		String newStr = "";
+		if (str.contains(word)) {
+			newStr = str.replace(word, "");
+		} else {
+			newStr = "word not found";
+		}
+		System.out.println("Modified String: " + newStr);
+	}
+}
+
+
+// replace a substring inside a string by another one
+
+import java.util.*;
+
+public class replaceWord {
+	public static void main(String[] args) {
+		Scanner s = new Scanner(System.in);
+		String sentence = "Hii there, Master";
+		System.out.println(sentence);
+		System.out.print("Word to place: ");
+		String wordTOPlace = s.next();
+		System.out.print("Word to replace: ");
+		String wordToReplaca = s.next();
+		replace(sentence, wordTOPlace, wordToReplaca);
+	}
+
+	static void replace(String sentence, String wordPlace, String wordReplace) {
+		String newStr = sentence.replace(wordReplace, wordPlace);
+		System.out.println("Modified String: " + newStr);
+	}
+}
+
+
+// search a word inside a string?
+
+public class searchWordString {
+	public static void main(String[] args) {
+		String word = "Geekster";
+		String str = "Hii Geekster";
+		searchString(str, word);
+	}
+
+	static void searchString(String str, String word) {
+		str = str.toLowerCase();
+		word = word.toLowerCase();
+
+		System.out.println(str);
+		if (str.contains(word)) {
+			System.out.print("word is present in str of index: " + str.indexOf(word));
+		} else {
+			System.out.println("word isn't present in str");
+		}
+	}
+}
