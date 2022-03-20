@@ -1,0 +1,313 @@
+// Java Program to print smallest and biggest possible palindrome word in a given string
+
+public class largestPalindrome {
+	static int length = 0;
+	static String largestPalindromesStore = "";
+	static String smallestPalindromeStore = "";
+
+	public static void main(String[] args) {
+		String str = "eyeinitheSky";
+		getSubString(str);
+		System.out.println("Largest palindromes are: " + largestPalindromesStore);
+		System.out.println("Smallest palindromes are: " + smallestPalindromeStore);
+	}
+
+	static void getSubString(String str) {
+		String sub = "";
+		int j = 0;
+		for (int i = 0; i < str.length(); i++) {
+			int end = str.length() + i - j;
+			if (end > str.length()) {
+				i = -1;
+				j++;
+				continue;
+			}
+			
+
+// Java Program to find the longest repeating sequence in a string
+
+public class longestRepeatingSequence {
+	public static void main(String[] args) {
+		String str = "eyeinskytheskyeye";
+		getSubStringArray(str, 1, false);
+	}
+
+	static void getSubStringArray(String str, int length, boolean fill) {
+		String subStringsarr[] = new String[length];
+		String sub = "";
+		int l = 0;
+		int j = 0;
+		for (int i = 0; i < str.length(); i++) {
+			int end = str.length() + i - j;
+			if (end > str.length()) {
+				i = -1;
+				j++;
+				continue;
+			}
+			sub = str.substring(i, end);
+			l++;
+			if (fill) {
+				subStringsarr[l - 1] = sub;
+			}
+		}
+		if (subStringsarr[0] == null) {
+			getSubStringArray(str, l, true);
+		} else {
+
+
+// Java Program to find all the permutations of a string
+
+public class permutationString {
+	public static void main(String[] args) {
+		String str = "abcd";
+		Permutations(str);
+	}
+	
+	static void Permutations(String str) {
+		char arr[] = str.toCharArray();
+		int length = arr.length;
+		int fact = 1;
+		while(length > 0) {
+			fact *= length;
+			length--;
+		}
+		int limit = fact/arr.length;
+		int z = 1;
+		int k = 0;
+		for(int i = 0; i < limit; i++) {
+			int count = 0;
+			for(int j = k; j < arr.length + k; j++) {
+				if(j == arr.length) {
+					j = 0;
+				}
+				int prev = (j-z) < 0 ? arr.length - z: j-z;
+				int next = (j+z) < arr.length ? j+z : 0;
+				char temp = arr[prev];
+				arr[prev] = arr[next];
+				
+
+// Java Program to swap two string variables without using third or temp variable.
+
+public class swapStrings {
+	public static void main(String[] args) {
+		String str1 = "Hii there!";
+		String str2 = "How are you???";
+
+		str1 = str1.concat(str2);
+		System.out.println(str1);
+
+		str2 = str1.substring(0, str1.length() - str2.length());
+		System.out.println(str2);
+
+		str1 = str1.replace(str2, "");
+		System.out.println(str1);
+	}
+}
+
+
+import java.util.Arrays;
+
+public class sumOfMatrix {
+	public static void main(String[] args) {
+		int matrixA[][] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+		int matrixB[][] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+		String sumMatrix = sumMatrix(matrixA, matrixB);
+		System.out.println(sumMatrix);
+	}
+
+	static String sumMatrix(int arr1[][], int arr2[][]) {
+		int sum[][] = new int[arr1.length][arr1[arr1.length - 1].length];
+		String str[] = new String[sum.length];
+		for (int x = 0; x < sum.length; x++) {
+			for (int y = 0; y < sum[x].length; y++) {
+				sum[x][y] = arr1[x][y] + arr2[x][y];
+			}
+			str[x] = Arrays.toString(sum[x]);
+		}
+		return Arrays.toString(str);
+	}
+}
+
+
+
+import java.util.Arrays;
+
+public class lowerTriMatrix {
+	public static void main(String[] args) {
+		int matrixA[][] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+		lowerTriMatrix(matrixA);
+	}
+	
+	static void lowerTriMatrix(int arr[][]) {
+		String str[] = new String[arr.length];
+		for(int x = 0; x < arr.length; x++) {
+			for(int y = 0; y < arr[x].length; y++) {
+				if(y > x) {
+					continue;
+				}
+				System.out.print(arr[x][y] + ", ");
+			}
+			System.out.println();
+		}
+	}
+}
+
+
+public class oddEvenFreq {
+	public static void main(String[] args) {
+		int matrixA[][] = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+		oddEvenCount(matrixA);
+	}
+
+	static void oddEvenCount(int arr[][]) {
+		int oddCount = 0;
+		int evenCount = 0;
+		for (int x = 0; x < arr.length; x++) {
+			for (int y = 0; y < arr[x].length; y++) {
+				if (arr[x][y] % 2 == 0) {
+					evenCount++;
+				} else {
+					oddCount++;
+				}
+			}
+		}
+		System.out.println("odd frequency : " + oddCount + "\neven frequency : " + evenCount);
+	}
+}
+
+
+
+public class sparseMatrix {
+	public static void main(String[] args) {
+		int matrixA[][] = { { 0, 2, 0 }, { 4, 0, 0 }, { 0, 0, 9 } };
+		boolean isSparseMatrix = checkSparseMatrix(matrixA);
+		System.out.println("sparse matrix: " + isSparseMatrix);
+	}
+
+	static boolean checkSparseMatrix(int arr[][]) {
+		int zeroCount = 0;
+		int non_zerCount = 0;
+		for (int x = 0; x < arr.length; x++) {
+			for (int y = 0; y < arr[x].length; y++) {
+				if (arr[x][y] == 0) {
+					zeroCount++;
+				} else {
+					non_zerCount++;
+				}
+			}
+		}
+		if (zeroCount > non_zerCount) {
+			return true;
+		}
+		return false;
+	}
+}
+
+public class nestedTry {
+	public static void main(String[] args) {
+		int arr[] = { 1, 2, 3, 4, 5 };
+		try {
+			System.out.println(arr[6]);
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println(e.getLocalizedMessage());
+			try {
+				int i = 4;
+				System.out.println(arr[i]);
+			} catch (Exception e1) {
+				System.out.println(e1.getMessage());
+			}
+		}
+	}
+}
+
+
+public class throwConcept {
+	public static void main(String[] args) {
+		int i = 16;
+		try {
+			if (i < 18) {
+				throw new ArithmeticException("not valid");
+			} else {
+				System.out.println("no errors");
+			}
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+}
+
+import java.io.IOException;
+
+public class throws_ {
+	public static void main(String[] args) {
+		int i = 5;
+		int j = 10;
+		try {
+			div(i, j);
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+	static void div(int i, int j) throws IOException {
+		System.out.println(j/i);
+		throw new IOException("throws exception occured");
+	}
+}
+ 
+ 
+// Java Program to Use Try and Catch for Exception Handling
+
+public class tryCatch {
+	public static void main(String[] args) {
+		int i = 10;
+		int j = 0;
+		int k;
+		try {
+			k = i/j;
+			System.out.println(k);
+		} catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
+}
+
+
+public class Test {
+  public static void main(String[] args) {
+    int x = 10;
+    int y = 0;
+    int z = x / y;
+    System.out.println(z);
+  }
+}
+
+// => ArithmeticException <<<<<--------------------------------------------------------
+
+b). 
+public class Test {
+  public static void main(String[] args) {        
+    byte num;
+    System.out.println(""Scientech"");
+    num = Byte.parseByte(""Easy"");
+    System.out.println(""num: "" +num);
+  }
+}
+
+
+
+//what will be the output of the following program when run?
+
+public class Test {
+  public static void main(String[] args) {                
+    try {
+      int value = 5;
+      if (value < 10)
+        throw new RuntimeException(""Value is less than 10"");
+    }
+    catch (RuntimeException re) {
+      System.out.println(re.getMessage());
+    }
+    System.out.println(""Outside try-catch block"");        
+  }
+}
